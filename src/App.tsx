@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Campground from "./pages/Campground";
 import CreateCampground from "./pages/CreateCampground";
-import { UserProvider } from "./context/UserContext";
-import { initState } from "./context/UserContext";
+import { UserProvider } from "./contexts/UserContext";
+import { initState } from "./contexts/UserContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CampgroundEdit from "./pages/CampgroundEdit";
 

@@ -1,13 +1,9 @@
-import { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { UserContext } from "../context/UserContext";
 import img from "../images/triskit copy.svg";
+import useUser from "../hooks/useUser";
 
 const Header = () => {
-  const {
-    state: { user },
-    logout,
-  } = useContext(UserContext);
+  const { user, logout } = useUser();
   return (
     <header>
       <Navbar variant="dark" expand="lg" collapseOnSelect>

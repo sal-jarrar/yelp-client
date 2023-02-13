@@ -1,4 +1,3 @@
-CampgroundEdit;
 import { FormEvent, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
