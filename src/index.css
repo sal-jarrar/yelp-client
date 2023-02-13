@@ -1,13 +1,216 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main {
+  min-height: 80vh;
+}
+* {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.welcome {
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form-wrapper {
+  position: relative;
+  background: transparent;
+  height: 440px;
+  width: 400px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  padding: 20px 10px;
+}
+.btn-form {
+  background-color: rgb(188, 190, 192);
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  background-color: rgba(109, 108, 108, 0.19);
+}
+.btn-form:hover {
+  background-color: black;
+}
+
+.register {
+  text-decoration: none;
+  color: rgba(239, 211, 182, 0.55);
+  margin-left: 3px;
+}
+
+.register:hover {
+  text-decoration: none;
+  color: rgba(242, 237, 232, 0.55);
+}
+
+.card-home {
+  margin: 90px auto 0;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.card-home-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-home-inner:hover {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgb(188, 188, 239);
+}
+
+.card-face-front {
+  background-image: linear-gradient(to bottom right, #ffce00, #fe4880);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review-card,
+.modal-delete-header {
+  background-image: linear-gradient(to bottom right, #ffce00, #fe4880);
+}
+.form-control {
+  /* box-shadow: 0px 3px 18px 2px rgb(233, 178, 12); */
+  border: #ffce00 2px solid !important;
+}
+
+.form-control:focus {
+  box-shadow: 0px 3px 13px 2px rgb(233, 178, 12) !important;
+}
+
+.card-face-front h2 {
+  color: #fff;
+  font-size: 32px;
+}
+
+.card-face-back {
+  background-color: #f3f3f3;
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card-header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, #ffce00 10%, #fe4880 115%);
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.card-img {
+  width: 400px;
+  height: 400px;
+  object-fit: fill;
+}
+
+.pp {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #fff;
+  object-fit: cover;
+}
+
+.card-header h2 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-body {
+  padding: 50px;
+}
+
+.card-body h3 {
+  color: #19190d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  color: #333333;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 0px 10px;
+}
+
+.img-camp {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 0 0 20px lightblue;
+  border-radius: 4px;
+}
+.review-form {
+  width: 550px;
+  margin-top: 24px;
+}
+
+.list-group-item {
+  color: #a075f0 !important;
+}
+@media (max-width: 700px) {
+  .form-wrapper {
+    width: 350px;
+  }
+  .review-form {
+    max-width: 340px;
+    margin: 20px 0;
+  }
+  .img-camp {
+    width: 330px;
+    height: 300px;
+    margin-left: 15px;
+  }
 }
