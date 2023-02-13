@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./pages/Home";
+import Campgrounds from "./pages/Campgrounds";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Campground from "./pages/Campground";
+import CreateCampground from "./pages/CreateCampground";
+import { UserProvider } from "./context/UserContext";
+import { initState } from "./context/UserContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CampgroundEdit from "./pages/CampgroundEdit";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider user={initState.user}>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Routes>
+            <Route index path="/" element={<Home />} />
+            <Route index path="/campgrounds" element={<Campgrounds />} />
+            <Route
+              index
+              path="/campground/create"
+              element={<CreateCampground />}
+            />
+            <Route index path="/campground/:campId" element={<Campground />} />
+            <Route
+              index
+              path="/campground/:campId/edit"
+              element={<CampgroundEdit />}
+            />
+            <Route index path="/page/:pageNumber" element={<Campgrounds />} />
+            <Route index path="/Login" element={<Login />} />
+            <Route index path="/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
+    </UserProvider>
   );
-}
+};
 
 export default App;
