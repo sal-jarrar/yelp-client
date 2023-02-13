@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
-import { USER } from "../context/ContextTypes";
+import { UserContext } from "../contexts/UserContext";
+import { USER } from "../contexts/ContextTypes";
 
 type useUserType = {
   user: USER | null;
