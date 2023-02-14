@@ -1,14 +1,15 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// pages
 import Home from "./pages/Home";
 import Campgrounds from "./pages/Campgrounds";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Campground from "./pages/Campground";
 import CreateCampground from "./pages/CreateCampground";
-import { UserProvider } from "./contexts/UserContext";
-import { initState } from "./contexts/UserContext";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CampgroundEdit from "./pages/CampgroundEdit";
+// context
+import { UserProvider, initState } from "./contexts/UserContext";
 
 const App = () => {
   return (
