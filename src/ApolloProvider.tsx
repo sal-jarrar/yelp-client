@@ -11,7 +11,7 @@ import { onError } from "@apollo/client/link/error";
 let token = localStorage.getItem("token");
 
 const httpLink = new HttpLink({
-  uri: "/graphql",
+  uri: "https://fsjaq6oup7.execute-api.us-east-1.amazonaws.com/dev/",
 });
 
 const authLink = new ApolloLink((o, f) => {
